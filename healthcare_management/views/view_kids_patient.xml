@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!-- Action for Kids Patients -->
+    <record id="action_kids_patients" model="ir.actions.act_window">
+        <field name="name">Kids Patients</field>
+        <field name="res_model">hospital.patient</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('date_of_birth', '>=', (context_today() - relativedelta(years=10)).strftime('%Y-%m-%d'))]</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new kids patient record here!
+            </p>
+        </field>
+    </record>
+
+    <!-- Menu for Kids Patients -->
+    <menuitem id="menu_kids_patients"
+              name="Kids Patients"
+              parent="patient_details_root_menu"
+              action="action_kids_patients"
+              sequence="30"/>
+
+</odoo>

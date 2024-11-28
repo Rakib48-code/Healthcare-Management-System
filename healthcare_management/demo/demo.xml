@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <record id="patient1" model="hospital.patient">
+            <field name="name">John Doe</field>
+            <field name="date_of_birth">1985-03-15</field>
+            <field name="gender">male</field>
+            <field name="ref">PAT001</field>
+        </record>
+        <record id="patient2" model="hospital.patient">
+            <field name="name">Jane Smith</field>
+            <field name="date_of_birth">1990-07-22</field>
+            <field name="gender">female</field>
+            <field name="ref">PAT002</field>
+        </record>
+        <record id="patient3" model="hospital.patient">
+            <field name="name">Michael Johnson</field>
+            <field name="date_of_birth">1978-11-10</field>
+            <field name="gender">male</field>
+            <field name="ref">PAT003</field>
+        </record>
+        <record id="patient4" model="hospital.patient">
+            <field name="name">Emily Davis</field>
+            <field name="date_of_birth">2000-01-05</field>
+            <field name="gender">female</field>
+            <field name="ref">PAT004</field>
+        </record>
+        <record id="patient5" model="hospital.patient">
+            <field name="name">Robert Brown</field>
+            <field name="date_of_birth">1982-06-18</field>
+            <field name="gender">male</field>
+            <field name="ref">PAT005</field>
+        </record>
+        <record id="patient6" model="hospital.patient">
+            <field name="name">Sophia Wilson</field>
+            <field name="date_of_birth">1995-09-30</field>
+            <field name="gender">female</field>
+            <field name="ref">PAT006</field>
+        </record>
+        <record id="patient7" model="hospital.patient">
+            <field name="name">James Miller</field>
+            <field name="date_of_birth">1988-12-25</field>
+            <field name="gender">male</field>
+            <field name="ref">PAT007</field>
+        </record>
+        <record id="patient8" model="hospital.patient">
+            <field name="name">Charlotte Anderson</field>
+            <field name="date_of_birth">1993-04-12</field>
+            <field name="gender">female</field>
+            <field name="ref">PAT008</field>
+        </record>
+        <record id="patient9" model="hospital.patient">
+            <field name="name">William Moore</field>
+            <field name="date_of_birth">1980-08-14</field>
+            <field name="gender">male</field>
+            <field name="ref">PAT009</field>
+        </record>
+        <record id="patient10" model="hospital.patient">
+            <field name="name">Olivia Taylor</field>
+            <field name="date_of_birth">1999-02-28</field>
+            <field name="gender">female</field>
+            <field name="ref">PAT010</field>
+        </record>
+    </data>
+</odoo>
