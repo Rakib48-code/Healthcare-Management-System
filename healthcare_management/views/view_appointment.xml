@@ -49,9 +49,10 @@
                         </div>
                         <field name="appointment_time"/>
                         <field name="booking_date"/>
-                        <field name="gender"/>
+                        <field name="gender" readonly="1" force_save="1"/>
                         <field name="ref"/>
                         <field name="note"/>
+                        <field name="active" invisible="1"/>
                     </group>
                     <notebook>
                         <page string="Note">
