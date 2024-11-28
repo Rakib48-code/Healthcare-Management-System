@@ -21,6 +21,7 @@ class HospitalPatient(models.Model):
         ('cancel', 'Cancelled')
     ], string='Status', tracking=True)
     note = fields.Text(string='Description')
+    active = fields.Boolean('Active', default=True)
     sl_no = fields.Char(string='SL NO', required=True, copy=False, readonly=True, default=lambda self: _('New'))
 
 

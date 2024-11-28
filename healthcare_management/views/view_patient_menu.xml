@@ -76,6 +76,7 @@
                         <field name="ref"/>
                         <field name="age"/>
                         <field name="note"/>
+                        <field name="active"/>
                     </group>
                     <notebook>
                         <page string="Note">
