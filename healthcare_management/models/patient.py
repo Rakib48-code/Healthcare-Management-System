@@ -19,7 +19,7 @@ class HospitalPatient(models.Model):
         ('confirm', 'Confirmed'),
         ('approve', 'Approved'),
         ('cancel', 'Cancelled')
-    ], string='Status', tracking=True)
+    ], string='Status', tracking=True, default='draft')
     note = fields.Text(string='Description')
     active = fields.Boolean('Active', default=True)
     sl_no = fields.Char(string='SL NO', required=True, copy=False, readonly=True, default=lambda self: _('New'))
@@ -54,3 +54,4 @@ class HospitalPatient(models.Model):
             vals['sl_no'] = self.env['ir.sequence'].next_by_code('patient.patient') or _('New')
         res = super(HospitalPatient, self).create(vals)
         return res
+
