@@ -20,6 +20,7 @@ class HospitalPatient(models.Model):
         ('approve', 'Approved'),
         ('cancel', 'Cancelled')
     ], string='Status', tracking=True, default='draft')
+    image = fields.Binary(string='Patient Image')
     note = fields.Text(string='Description')
     active = fields.Boolean('Active', default=True)
     sl_no = fields.Char(string='SL NO', required=True, copy=False, readonly=True, default=lambda self: _('New'))
