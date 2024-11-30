@@ -92,4 +92,10 @@
               parent="appointment_details_root_menu"
               sequence="0"/>
 
+    <menuitem id="create_appointment_menu"
+              name="Create Appointments"
+              action="action_create_appointment"
+              parent="appointment_details_root_menu"
+              sequence="10"/>
+
 </odoo>

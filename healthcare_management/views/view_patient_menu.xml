@@ -53,9 +53,12 @@
                     <button name="action_confirm" string="Confirm" class="btn-primary" type="object"
                             confirm="Are you sure that you need to confirm ?"/>
                     <button name="action_approve" string="Approve" class="btn-primary" type="object"
-                            confirm="Are you sure that you need to approve ?"/>/>
+                            confirm="Are you sure that you need to approve ?"/>
                     <button name="action_cancel" string="Cancel" type="object"
-                            confirm="Are you sure that you need to cancel ?"/>/>
+                            confirm="Are you sure that you need to cancel ?"/>
+                    <button id="button_create_appointment" string="Create Appointment" type="action"
+                            name="%(healthcare_management.action_create_appointment)d"
+                            class="btn-primary" confirm="Are you sure that you need to create appointment ?"/>
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
                 </header>
                 <sheet>

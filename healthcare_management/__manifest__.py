@@ -7,6 +7,7 @@
     'data' : [
         'security/ir.model.access.csv',
         'data/patient_data.xml',
+        'wizard/create_appointment_view.xml',
         'views/heatlcare_menu.xml',
         'views/view_patient_menu.xml',
         'views/view_female_patient.xml',
