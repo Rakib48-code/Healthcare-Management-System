@@ -13,6 +13,8 @@
                 <filter name="male" string="Male" domain="[('gender','=','male')]"/>
                 <filter name="female" string="Female" domain="[('gender','=','female')]"/>
                 <filter name="filter_kids" string="Kids" domain="[('age','&lt;',10)]"/>
+                <separator/>
+                <filter name="archived" string="Archived" domain="[('active', '=', False)]"/>
                 <group string="Group By">
                     <filter name="filter_gender" string="Gender" context="{'group_by': 'gender'}"/>
                 </group>
