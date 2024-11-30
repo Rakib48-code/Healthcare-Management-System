@@ -8,9 +8,13 @@
                 <group>
                     <field name="date_appointment"/>
                     <field name="patient_id"/>
+                    <field name="appointment_serial_no"/>
+                    <field name="gender"/>
+                    <field name="date_of_birth"/>
                 </group>
                 <footer>
                      <button name="action_create" string="Create" class="btn-primary" type="object"/>
+                     <button name="action_view" string="View Appointment" class="btn-primary" type="object"/>
                     <button string="Cancel" class="btn-secondary" special="cancel"/>
                 </footer>
             </form>
