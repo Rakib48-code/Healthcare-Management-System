@@ -11,9 +11,14 @@
               parent="healthcare_root_menu"
               sequence="0"/>
 
-     <menuitem id="appointment_details_root_menu"
+    <menuitem id="appointment_details_root_menu"
               name="Appointment Details"
               parent="healthcare_root_menu"
               sequence="10"/>
+
+    <menuitem id="doctor_root_menu"
+              name="Doctor Details"
+              parent="healthcare_root_menu"
+              sequence="20"/>
 
 </odoo>

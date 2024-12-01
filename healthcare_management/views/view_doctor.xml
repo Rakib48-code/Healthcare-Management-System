@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="view_doctors_menu_kanban" model="ir.ui.view">
+        <field name="name">hospital.doctor.kanban</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="id"/>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="note"/>
+                <field name="age"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <ul>
+                                    <li>
+                                        Name:
+                                        <field name="name"/>
+                                    </li>
+                                    <li>
+                                        Name:
+                                        <field name="gender"/>
+                                    </li>
+                                    <li>
+                                        Name:
+                                        <field name="age"/>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="view_doctors_menu_tree" model="ir.ui.view">
+        <field name="name">hospital.doctor.tree</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="note"/>
+                <field name="age"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_doctors_menu_form" model="ir.ui.view">
+        <field name="name">hospital.doctor.form</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="age"/>
+                        </group>
+                        <group>
+                            <field name="gender"/>
+                            <field name="note"/>
+                        </group>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_doctors_menu_search" model="ir.ui.view">
+        <field name="name">hospital.doctor.search</field>
+        <field name="model">hospital.doctor</field>
+        <field name="arch" type="xml">
+            <search string="Doctors">
+                <field name="name"/>
+                <field name="note"/>
+                <separator/>
+                <filter string="Male" name="male" domain="[('gender', '=', 'male')]"/>
+                <filter string="Female" name="female" domain="[('gender', '=', 'female')]"/>
+                <group expand="0" string="Group By">
+                    <filter name="gendr" string="Gender" context="{'group_by':'gender'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+
+    <record id="view_doctors_menu" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="res_model">hospital.doctor</field>
+        <field name="view_mode">tree,form,kanban</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create new a doctors
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="doctors_menu"
+              name="Doctors"
+              parent="doctor_root_menu"
+              action="view_doctors_menu"
+              sequence="0"/>
+
+
+</odoo>
