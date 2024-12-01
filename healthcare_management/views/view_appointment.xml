@@ -5,9 +5,10 @@
         <field name="name">hospital.appointment.tree</field>
         <field name="model">hospital.appointment</field>
         <field name="arch" type="xml">
-            <tree>
+            <tree multi_edit="1">
                 <field name="sl_no"/>
                 <field name="patient_id"/>
+                <field name="doctors_id"/>
                 <field name="appointment_date"/>
                 <field name="booking_date"/>
                 <field name="gender"/>
@@ -61,6 +62,7 @@
                         <field name="appointment_serial_no"/>
                         <field name="note"/>
                         <field name="active" invisible="1"/>
+                        <field name="doctors_id"/>
                     </group>
                     <notebook>
                         <page string="Note">

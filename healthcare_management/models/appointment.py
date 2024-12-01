@@ -27,6 +27,7 @@ class HospitalAppointment(models.Model):
     appointment_serial_no = fields.Integer(string='Appointment Serial')
     date_of_birth = fields.Date(string='Date of Birth', related='patient_id.date_of_birth',readonly=False)
     age = fields.Integer(string='Age',compute='_compute_age', readonly=False)
+    doctors_id = fields.Many2one('hospital.doctor', string='Doctor')
 
 
     @api.depends('date_of_birth')
