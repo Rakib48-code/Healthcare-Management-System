@@ -25,6 +25,7 @@ class HospitalPatient(models.Model):
     active = fields.Boolean('Active', default=True)
     sl_no = fields.Char(string='SL NO', required=True, copy=False, readonly=True, default=lambda self: _('New'))
     appointment_ids = fields.One2many('hospital.appointment', 'patient_id', string='Appointments')
+    doctor_id = fields.Many2one('hospital.doctor', string='Doctor')
 
 
     @api.depends('date_of_birth')

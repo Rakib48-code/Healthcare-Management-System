@@ -33,6 +33,7 @@
             <tree>
                 <field name="sl_no"/>
                 <field name="name"/>
+                <field name="doctor_id"/>
                 <field name="date_of_birth"/>
                 <field name="age"/>
                 <field name="gender"/>
@@ -85,6 +86,7 @@
                             <field name="name" placeholder="e.g. Patient Name"/>
                             <field name="date_of_birth"/>
                             <field name="gender"/>
+                            <field name="doctor_id"/>
                         </group>
                         <group>
                             <field name="ref"/>
