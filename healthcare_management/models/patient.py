@@ -24,6 +24,7 @@ class HospitalPatient(models.Model):
     note = fields.Text(string='Description')
     active = fields.Boolean('Active', default=True)
     sl_no = fields.Char(string='SL NO', required=True, copy=False, readonly=True, default=lambda self: _('New'))
+    appointment_ids = fields.One2many('hospital.appointment', 'patient_id', string='Appointments')
 
 
     @api.depends('date_of_birth')
@@ -55,4 +56,14 @@ class HospitalPatient(models.Model):
             vals['sl_no'] = self.env['ir.sequence'].next_by_code('patient.patient') or _('New')
         res = super(HospitalPatient, self).create(vals)
         return res
+
+    #name get function
+    def name_get(self):
+        result = []
+        for rec in self:
+            name = rec.ref + ' ' + rec.name
+            result.append((rec.id, name))
+        return result
+
+
 

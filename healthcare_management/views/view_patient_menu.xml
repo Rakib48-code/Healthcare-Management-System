@@ -65,28 +65,33 @@
                 </header>
                 <sheet>
                     <field name="image" widget="image" class="oe_avatar"/>
-<!--                    <widget name="web_ribbon" title="Male" bg_color="bg-success"-->
-<!--                            attrs="{'invisible': [('gender', '=', 'female')]}"/>-->
-<!--                    <widget name="web_ribbon" title="Female" bg_color="bg-success"-->
-<!--                            attrs="{'invisible': [('gender', '=', 'male')]}"/>-->
+                    <!--                    <widget name="web_ribbon" title="Male" bg_color="bg-success"-->
+                    <!--                            attrs="{'invisible': [('gender', '=', 'female')]}"/>-->
+                    <!--                    <widget name="web_ribbon" title="Female" bg_color="bg-success"-->
+                    <!--                            attrs="{'invisible': [('gender', '=', 'male')]}"/>-->
                     <div class="oe_title">
                         <h1>
                             <field name="sl_no" readonly="1"/>
                         </h1>
                     </div>
                     <group>
-                        <div class="oe_title">
-                            <label for="name" class="oe_edit_only"/>
-                            <h1>
-                                <field name="name" placeholder="e.g. Patient Name"/>
-                            </h1>
-                        </div>
-                        <field name="date_of_birth"/>
-                        <field name="gender"/>
-                        <field name="ref"/>
-                        <field name="age"/>
-                        <field name="note"/>
-                        <field name="active" invisible="1"/>
+<!--                        <div class="oe_title">-->
+<!--                            <label for="name" class="oe_edit_only"/>-->
+<!--                            <h1>-->
+<!--                                <field name="name" placeholder="e.g. Patient Name"/>-->
+<!--                            </h1>-->
+<!--                        </div>-->
+                        <group>
+                            <field name="name" placeholder="e.g. Patient Name"/>
+                            <field name="date_of_birth"/>
+                            <field name="gender"/>
+                        </group>
+                        <group>
+                            <field name="ref"/>
+                            <field name="age"/>
+                            <field name="note"/>
+                            <field name="active" invisible="1"/>
+                        </group>
                     </group>
                     <notebook>
                         <page string="Note">
