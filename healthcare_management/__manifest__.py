@@ -15,6 +15,8 @@
         'views/view_kids_patient.xml',
         'views/view_appointment.xml',
         'views/view_doctor.xml',
+        'report/patient_details_template.xml',
+        'report/report.xml',
     ],
     'demo' : [
         'demo/demo.xml',

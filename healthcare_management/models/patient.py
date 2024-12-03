@@ -37,6 +37,7 @@ class HospitalPatient(models.Model):
             else:
                 rec.age = 0
 
+    # status bar button click action
     def action_draft(self):
         self.state = 'draft'
 
@@ -49,6 +50,8 @@ class HospitalPatient(models.Model):
     def action_cancel(self):
         self.state = 'cancel'
 
+
+    # generate number create
     @api.model
     def create(self, vals):
         if not vals.get('note'):

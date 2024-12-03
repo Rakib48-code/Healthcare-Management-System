@@ -30,6 +30,7 @@ class HospitalAppointment(models.Model):
     doctors_id = fields.Many2one('hospital.doctor', string='Doctor')
 
 
+    # age compute
     @api.depends('date_of_birth')
     def _compute_age(self):
         today = date.today()
@@ -64,6 +65,7 @@ class HospitalAppointment(models.Model):
     def action_cancel(self):
         self.state = 'cancel'
 
+    # generate sequence number
     @api.model
     def create(self, vals):
         if not vals.get('note'):
