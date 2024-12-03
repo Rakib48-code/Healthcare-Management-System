@@ -17,15 +17,19 @@
                             <div class="oe_kanban_details">
                                 <ul>
                                     <li>
-                                        Name:
+                                        <strong>Doctor ID:</strong>
+                                        <field name="id"/>
+                                    </li>
+                                    <li>
+                                        <strong>Name:</strong>
                                         <field name="name"/>
                                     </li>
                                     <li>
-                                        Name:
+                                        <strong>Gender:</strong>
                                         <field name="gender"/>
                                     </li>
                                     <li>
-                                        Name:
+                                        <strong>Age:</strong>
                                         <field name="age"/>
                                     </li>
                                 </ul>
