@@ -15,24 +15,40 @@
                     <t t-name="kanban-box">
                         <div t-attf-class="oe_kanban_global_click">
                             <div class="oe_kanban_details">
-                                <ul>
-                                    <li>
-                                        <strong>Patient ID:</strong>
-                                        <field name="id"/>
+                                <ul class="kanban-details-list">
+                                    <!-- Patient ID -->
+                                    <li class="kanban-item">
+                                        <strong class="kanban-label">Patient ID:</strong>
+                                        <span class="kanban-value">
+                                            <field name="id"/>
+                                        </span>
                                     </li>
-                                    <li>
-                                        <strong>Name:</strong>
-                                        <field name="name"/>
+                                    <!-- Patient Name -->
+                                    <li class="kanban-item">
+                                        <!--                                        <strong class="kanban-label">Name:</strong>-->
+                                        <h3 class="kanban-name">
+                                            <field name="name"/>
+                                        </h3>
                                     </li>
-                                    <li>
-                                        <strong>Gender:</strong>
-                                        <field name="gender"/>
+                                    <!-- Gender -->
+                                    <li class="kanban-item">
+                                        <strong class="kanban-label">Gender:</strong>
+                                        <span class="kanban-value">
+                                            <field name="gender"/>
+                                        </span>
                                     </li>
-                                    <li>
-                                        <strong>Age:</strong>
-                                        <field name="age"/>
+                                    <!-- Age -->
+                                    <li class="kanban-item">
+                                        <strong class="kanban-label">Age:</strong>
+                                        <span class="kanban-value">
+                                            <field name="age"/>
+                                        </span>
                                     </li>
                                 </ul>
+                                <!-- Action Buttons -->
+                                <div class="kanban-actions">
+                                    <button type="button" class="btn btn-primary">View Details</button>
+                                </div>
                             </div>
                         </div>
                     </t>
@@ -40,6 +56,9 @@
             </kanban>
         </field>
     </record>
+
+
+
 
     <record id="view_patient_menu_search" model="ir.ui.view">
         <field name="name">hospital.patient.search</field>
@@ -59,7 +78,7 @@
                     <filter name="filter_gender" string="Gender" context="{'group_by': 'gender'}"/>
                 </group>
                 <searchpanel>
-                    <field name="gender" string="Gender" icon="fa-cutlery" color="#875A7B"/>
+                    <field name="gender" string="Gender" icon="fa-cutlery"/>
                 </searchpanel>
             </search>
         </field>
@@ -102,10 +121,11 @@
                     <button id="button_create_appointment" string="Create Appointment" type="action"
                             name="%(healthcare_management.action_create_appointment)d"
                             class="btn-primary" confirm="Are you sure that you need to create appointment ?"/>
+
                     <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
                 </header>
                 <sheet>
-                    <field name="image" widget="image" class="oe_avatar"/>
+                    <field name="patient_image" widget="Image" class="oe_avatar"/>
                     <!--                    <widget name="web_ribbon" title="Male" bg_color="bg-success"-->
                     <!--                            attrs="{'invisible': [('gender', '=', 'female')]}"/>-->
                     <!--                    <widget name="web_ribbon" title="Female" bg_color="bg-success"-->
@@ -141,6 +161,10 @@
                         </page>
                         <page string="About">
                             This is an example for the patient
+                        </page>
+                        <page string="Appointment">
+                            <label for="appointment_ids"/>
+                            <field name="appointment_ids"/>
                         </page>
                     </notebook>
                 </sheet>

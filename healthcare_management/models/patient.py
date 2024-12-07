@@ -20,7 +20,7 @@ class HospitalPatient(models.Model):
         ('approve', 'Approved'),
         ('cancel', 'Cancelled')
     ], string='Status', tracking=True, default='draft')
-    image = fields.Binary(string='Patient Image')
+    patient_image = fields.Binary(string='Image')
     note = fields.Text(string='Description')
     active = fields.Boolean('Active', default=True)
     sl_no = fields.Char(string='SL NO', required=True, copy=False, readonly=True, default=lambda self: _('New'))
@@ -37,9 +37,13 @@ class HospitalPatient(models.Model):
             else:
                 rec.age = 0
 
-    # status bar button click action
+    # statusbar click action
+    @api.model
     def action_draft(self):
-        self.state = 'draft'
+        for rec in self:
+            rec.state = 'draft'
+        # self.state = 'draft'
+
 
     def action_confirm(self):
         self.state = 'confirm'
@@ -62,12 +66,12 @@ class HospitalPatient(models.Model):
         return res
 
     #name get function
-    def name_get(self):
-        result = []
-        for rec in self:
-            name = rec.ref + ' ' + rec.name
-            result.append((rec.id, name))
-        return result
+    # def name_get(self):
+    #     result = []
+    #     for rec in self:
+    #         name = rec.ref + ' ' + rec.name
+    #         result.append((rec.id, name))
+    #     return result
 
 
 
